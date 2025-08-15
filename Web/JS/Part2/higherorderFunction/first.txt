@@ -1,0 +1,3 @@
+☠️ When you have 2 functions a and b, assume that function b is sent as an argument yo the other function (a ) then we say that the accepting function is your higher order function (a).
+
+☠️ When I have an outer function and inside that function I have another function (inner) and I am returning the inner function then the outer function is known as Higher order function.

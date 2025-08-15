@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Displaying list of all Blogs</h1>
+    <% for(let blog of blogs) { %>
+        <div>
+            <h2><%= blog.id %></h2>
+            <h3>Author: <%= blog.author %></h3>
+            <h3>Content: <%= blog.comment %></h3>
+        </div>
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,16 @@
+var     let     const
+👍      👍      👎          redeclaration
+👍      👎      👎          re assign
+
+
+. The shortest JS code is an empty JS file.
+. Whenever a JS code runs, a global execcution context(GEC) is created. Inside that GEC we have 2 phases
+    => Memory Creation Phase MCP
+    => Code Execution PHase CEP
+. MCP runs when 0 line of code is executed that is before the CEP, the role of MCP is to allocate memory
+    => To all the variables
+    => To all the functions
+. The role of CEP is to execute after MCP and to run the code line by line.
+. All the JS code is getting executed because of call stack, GEC is actually running inside the call stack.
+. Whenever any function executes, a new execution context is created and the name of newly created executed context is  same as that the name of function
+** Whenever GEC is created along with that Global Object (Window) is also created.

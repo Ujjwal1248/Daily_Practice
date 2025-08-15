@@ -1,0 +1,1 @@
+Whenever we return a function it is never returned alone it is always returned with its laxical dependent environment

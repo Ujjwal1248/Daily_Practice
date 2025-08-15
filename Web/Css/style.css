@@ -1,0 +1,31 @@
+h1{
+    background-color: blueviolet;
+    font-size: 30px;
+}
+
+.ujjwal{
+    color: red;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.ujjwal:hover{
+    background-color: aqua;
+}
+
+.in:focus{
+    background-color:azure;
+}
+
+.in1:active{
+    background-color: cadetblue;
+}
+
+/* COLOR AND FONT SIZE WILL BE ADAPTED UNDER INHERTENCE BUT THE BORDER WILL NOT FALL UNDER IT */
+ul>li{
+    color: red;
+    font-size: 50px;
+    border: 5px solid yellow ;
+}

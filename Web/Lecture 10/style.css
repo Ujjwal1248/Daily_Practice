@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div {
+    display: inline-block;
+    width: 100px;
+    height:100px;
+    border: 2px soild black;
+    background-color: aliceblue;
+}
+
+#static #mdidle {
+    position : static;
+    top:100px;
+    left:100px;
+}
+/*
+When you use top: 100px and left: 100px with position: relative, it moves the element:
+100px down from its original position (because of top: 100px).
+100px to the right from its original position (because of left: 100px). */
+#relative #middle {
+    position:relative;
+    /* top:0;
+    left:0; */
+}
+#absolute{
+    position: relative;
+}
+/*in absolute offset depends on recently positioned parent */
+#absolute #middle {
+    position:absolute;
+    top:50PX;
+    left:50px}
+
+#fixed{
+    position: relative;
+}
+#fixed #middle{
+    position: fixed;
+    top: 50px;
+    left:50px;
+}
+
+#section{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 200px 300px;
+    grid-template-rows: 100px 150pc 100px;
+    grid-auto-flow: column;
+}
+div{
+    background-color: red;
+    border: 1px solid black;
+}
