@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
     res.send('Welcome to root Route!');
 });
 
+app.get('/human', (req, res) => {
+    res.send('Welcome to Human Route!');
+});
+
 app.get('/blogs', (req, res) => {
     res.render('blogs/index', { blogs });
 });
