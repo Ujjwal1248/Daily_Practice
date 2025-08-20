@@ -1,11 +1,14 @@
 const express = require('express');
 const path = require('path');
+const methodOverride = require('method-override');
 const app = express();
+const {v4: uuidv4} = require('uuid');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
     res.send('Welcome to root Route!');
@@ -29,37 +32,58 @@ app.post('/blogs', (req, res) => {
     res.send("Blog created successfully!");
 });
 
-let password = 212212;
-app.use('/home',(req,res,next)=>{
-    if(password === 212212){
-        next();
-    }
-    else{
-        res.render("home");
-    }
-})
+// Particular Blog
+
+app.get('/blogs/:idd', (req, res) => {
+    let { idd } = req.params;
+    let foundblog = blogs.find((blog) => blog.id == idd);
+    res.render('blogs/show', { foundblog });
+});
+
+app.get('/blogs/:idd/edit', (req, res) => {
+    let { idd } = req.params;
+    let foundblog = blogs.find((blog) => blog.id == idd);
+    res.render('blogs/edit', { foundblog });
+});
+
+app.patch('/blogs/:idd', (req, res) => {
+    let { idd } = req.params;
+    let foundblog = blogs.find((blog) => blog.id == idd);
+    let { author, content } = req.body;
+    foundblog.author = author;
+    foundblog.comment = content;
+    res.redirect('/blogs');
+});
+
+// Delete Blog
+app.delete('/blogs/:idd', (req, res) => {
+    let { idd } = req.params;
+    let blogIndex = blogs.findIndex((blog) => blog.id == idd);
+    res.redirect('/blogs');
+});
+
 
 // CRUD
 // Create, Read, Update, Delete
 
 const blogs = [
     {
-        id: 1,
+        id: uuidv4(),
         author: 'Ujjwal',
         comment: "Aaj kamaenga to kl bathke khaenge",
     },
     {
-        id: 2,
+        id: uuidv4(),
         author: 'Arpit',
         comment: "Aaj khaenge to kl kamaenge",
     },
     {
-        id: 3,
+        id: uuidv4(),
         author: 'Anshul',
         comment: "Aaj khaenge to kl khaenge",
     },
     {
-        id: 4,
+        id: uuidv4(),
         author: 'Aryan',
         comment: "Papa woh cycle ki toh....",
     }
