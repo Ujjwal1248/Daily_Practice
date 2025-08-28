@@ -20,4 +20,13 @@ async function createNeta(req, res) {
     }
 }
 
-module.exports = { readNetas, createNeta };
+async function showNewForm(req, res) {
+    try{
+        res.status(200).render('new');
+    }
+    catch(err){
+        res.status(404).json({ message: 'Error creating neta' });
+    }
+}
+
+module.exports = { readNetas, createNeta , showNewForm };
