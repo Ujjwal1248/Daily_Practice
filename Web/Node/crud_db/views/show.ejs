@@ -3,16 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Neta Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .detail {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        .detail span {
+            font-weight: bold;
+            color: #34495e;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-    <h1>Displaying a particular Neta</h1>
-    <a href="/api/netas"><button>Back to All Netas</button></a>
-    <div>
-        <h1>Name: <%= foundNeta.name %></h1>
-        <h1>Party: <%= foundNeta.party %></h1>
-        <h1>isMale: <%= foundNeta.isMale %></h1>
-        <h1>isCorrupt: <%= foundNeta.isCorrupt %></h1>
+    <h1>Displaying a Particular Neta</h1>
+    <div class="container">
+        <div class="detail"><span>Name:</span> <%= foundNeta.name %></div>
+        <div class="detail"><span>Party:</span> <%= foundNeta.party %></div>
+        <div class="detail"><span>Is Male:</span> <%= foundNeta.isMale ? 'Yes' : 'No' %></div>
+        <div class="detail"><span>Is Corrupt:</span> <%= foundNeta.isCorrupt ? 'Yes' : 'No' %></div>
+        <a href="/api/netas" class="btn">Back to All Netas</a>
     </div>
 </body>
 </html>
