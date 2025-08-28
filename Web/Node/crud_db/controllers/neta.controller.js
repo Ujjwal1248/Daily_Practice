@@ -29,4 +29,15 @@ async function showNewForm(req, res) {
     }
 }
 
-module.exports = { readNetas, createNeta , showNewForm };
+async function showParticularNeta(req, res) {
+    try{
+        let {id} = req.params;
+        let foundNeta = await NetaModel.findById(id);
+        return res.status(200).render('show',{foundNeta});
+    }
+    catch(err){
+        res.status(404).json({ message: 'Error creating neta' });
+    }
+}
+
+module.exports = { readNetas, createNeta , showNewForm , showParticularNeta};

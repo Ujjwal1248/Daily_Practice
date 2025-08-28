@@ -3,15 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All Netas</title>
+    <style>
+        /* Background Gradient */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f6d365, #fda085);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Header with transparency */
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Container Grid */
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Glassmorphism Card */
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Card Text */
+        .card h2 {
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin: 8px 0;
+        }
+
+        /* Beautiful badges */
+        .badge {
+            display: inline-block;
+            padding: 8px 14px;
+            margin: 5px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .male {
+            background: rgba(76, 175, 80, 0.7); /* Green */
+        }
+
+        .female {
+            background: rgba(233, 30, 99, 0.7); /* Pink */
+        }
+
+        .corrupt {
+            background: rgba(244, 67, 54, 0.7); /* Red */
+        }
+
+        .clean {
+            background: rgba(255, 193, 7, 0.7); /* Amber/Yellow */
+        }
+
+        /* Responsive */
+        @media(max-width: 600px) {
+            header {
+                font-size: 1.6rem;
+            }
+            .card h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Displaying all the Netas</h1>
-    <% for(let item of allNetas){ %>
-        <h1>Name: <%= item.name %></h1>
-        <h1>Party: <%= item.party %></h1>
-        <h1>IsMale: <%= item.isMale %></h1>
-        <h1>IsCorrupt: <%= item.isCorrupt %></h1>
-    <% } %>
+    <header>Displaying All Netas</header>
+
+    <div class="container">
+        <% for(let item of allNetas){ %>
+            <div class="card">
+                <h2><%= item.name %></h2>
+                <p><strong>Party:</strong> <%= item.party %></p>
+                <div>
+                    <span class="badge <%= item.isMale ? 'male' : 'female' %>">
+                        <%= item.isMale ? 'Male' : 'Female' %>
+                    </span>
+                    <span class="badge <%= item.isCorrupt ? 'corrupt' : 'clean' %>">
+                        <%= item.isCorrupt ? 'Corrupt' : 'Clean' %>
+                    </span>
+                </div>
+                <a href="/api/neta/<%= item._id %>" style="color: #fff; text-decoration: underline; margin-top: 15px; display: inline-block;"><button>View Details</button></a>
+            </div>
+        <% } %>
+    </div>
 </body>
 </html>
