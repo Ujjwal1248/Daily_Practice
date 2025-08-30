@@ -127,6 +127,9 @@
                     </span>
                 </div>
                 <a class="badge" href="/api/neta/<%= item._id %>" style="color: #c10d0d; text-decoration: underline; margin-top: 15px; display: inline-block;">View Details</a>
+                <a class="badge" href="/api/neta/edit/<%= item._id %>" style="color: #c10d0d; text-decoration: underline; margin-top: 15px; display: inline-block;">Edit Neta</a>
+                <form action="/api/neta/delete/<%= item._id %>?_method=DELETE" method="POST" style="display: inline;">
+                    <button type="submit" class="badge" style="background: #c10d0d; border: none; cursor: pointer; margin-top: 15px;">Delete Neta</button>
             </div>
         <% } %>
     </div>

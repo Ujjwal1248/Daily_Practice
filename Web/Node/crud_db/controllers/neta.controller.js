@@ -40,4 +40,37 @@ async function showParticularNeta(req, res) {
     }
 }
 
-module.exports = { readNetas, createNeta , showNewForm , showParticularNeta};
+async function showEditForm(req, res) {
+    try{
+        let {id} = req.params;
+        let foundNeta = await NetaModel.findById(id);
+        res.status(200).render('edit', { foundNeta });
+    }
+    catch(err){
+        res.status(404).json({ message: 'Error creating neta' });
+    }
+}
+
+async function actuallyEditingNeta(req, res) {
+    try{
+        let {name,isMale,party,isCorrupt} = req.body;
+        let {id} = req.params;
+        let editedData = await NetaModel.findByIdAndUpdate(id, {name, isMale, party, isCorrupt}, {new: true});
+        res.status(200).redirect('/api/netas');
+    }
+    catch(err){
+        res.status(404).json({ message: 'Error creating neta' });
+    }
+}
+
+async function deletingNeta(req, res) {
+    try{
+        let {id} = req.params;
+        let editedData = await NetaModel.findByIdAndDelete(id);
+        res.status(200).redirect('/api/netas');
+    }
+    catch(err){
+        res.status(404).json({ message: 'Error creating neta' });
+    }
+}
+module.exports = { readNetas, createNeta , showNewForm , showParticularNeta, showEditForm , actuallyEditingNeta, deletingNeta};
