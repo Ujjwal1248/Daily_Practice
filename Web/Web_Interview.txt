@@ -1,0 +1,54 @@
+JS=>
+    var let const
+    Hoisting => Death Temporal Zone
+    Closure and Scope
+    Higher Order Function (In-Built Functions(map, filter, reduce, some, every)) and CallBack function
+    Polyfilm (map, filter, reduce)
+    Deep Copy and Shallow Copy
+    Debouncing, throtling
+    Event Bubbling and Capturing => delegation
+    Constructor and classes => super
+    Prototype
+
+
+    CallBackHell => Promises => Async-Await (with Example and all Disadvantages)
+    SetTimeout, SetInterval, console
+    fetch, axios
+    Why we use .json() in fetch
+        => Because we want data in .json format
+        => Data packets m aata h uske fix krne k liye aur data ko ek saath dikhaane k liye
+    EventLoop(MicrotaskQueue, CallBackQueue)
+
+NodeJS=>
+    Difference b/w browser and NodeJS
+    NodeJS architecture
+    Module Types => CommonJS (Old used in NodeJS), ESmodule (New used in React)
+    File System => Blocking, Not Blocking
+    require a folder
+    Https Methods (Get, Post, Put, Fetch, Delete)
+    MiddleWare, BodyParsing MiddleWare
+
+Express=>
+    Correct Method returns a Promises
+    MVC, returns
+    API create
+
+DataBase=>
+    CRUD
+    Populate
+    Indexing
+
+Authentication and Authorization(JWT Tokens)
+
+React=>
+    Advantages and Disadvantages
+    Virtual DOM => React Fibre, Diffing Algo, reconsilation
+    Lifecycle of React Component => CDM, CDU, CWUM => useEffect teeno ko use kr skta h
+    useState() => Batching
+    useEffect() => Dependency Array
+    Memo(), useMemo(), uesCallBack(), useRef()
+    Lazy Loading => Sequence FallBack
+    Prop Drilling (to overcome this we use Context Approach)
+    React Router DOM => Create Browser ROuter
+    Link v/s useNavigate()
+    Store, slice, actions, reducer frequency, Subscribe selector
