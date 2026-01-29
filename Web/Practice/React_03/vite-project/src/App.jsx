@@ -1,10 +1,12 @@
 import React from 'react'
-import Sam from './components/Sam'
+import Memo from './components/Memo'
+import Batching from './components/Batching'
 
 function App() {
   return (
     <div>
-      <Sam />
+      {/* <Memo /> */}
+      <Batching />
     </div>
   )
 }
