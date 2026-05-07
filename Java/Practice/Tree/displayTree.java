@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class displayTree {
-    public static int[] arr = {2,3,4,5,6,7,8,9};
+    public static int[] arr = {2,3,4,5,16,7,8,9};
     static void main(String[] args) {
         createBinaryTree.Node root = createBinaryTree.buildTree(arr);
         display(root);
