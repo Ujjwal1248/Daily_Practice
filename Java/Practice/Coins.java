@@ -17,7 +17,7 @@ public class Coins{
             return 0.0;
         }
         if(dp[h][i] != -1){
-            returndp[h][i];
+            return dp[h][i];
         }
 
         double head = p[i] * probability(p, h-1, i+1);

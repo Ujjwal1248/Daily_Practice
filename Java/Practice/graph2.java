@@ -2,7 +2,7 @@ package Lec_53;
 
 import java.util.*;
 
-public class Graph_2 {
+class Graph_2 {
 	private HashMap<Integer , HashMap <Integer, Integer>> map;
 
 	public void Graph(int v) {
